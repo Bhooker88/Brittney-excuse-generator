@@ -60,6 +60,8 @@ window.onload = () => {
     img.src = picsR;
 
     document.getElementById("excuse").innerHTML =
-      perIndxR + " " + actIndxR + " " + posIndxR + " " + timIndxR;
+      // best practice for string
+      //  perIndxR + " " + actIndxR + " " + posIndxR + " " + timIndxR;
+      `${perIndxR} ${actIndxR} ${posIndxR} ${timIndxR}`;
   };
 };
