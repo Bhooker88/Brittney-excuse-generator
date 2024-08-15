@@ -1,16 +1,11 @@
 [build]
-  # Command to run the build (modify this based on your project)
-  command = "npm run build"
-
-  # Directory to publish (make sure this matches your build output)
+  command = "npm run build -- --mode production"
   publish = "dist"
 
-[context.production]
-  # Specific settings for production builds
-  command = "npm run build -- --mode production"
+[context.production.environment]
+  NODE_VERSION = "16.20.0"
 
 [[redirects]]
-  # Redirect all routes to index.html for Single Page Applications (SPA)
   from = "/*"
   to = "/index.html"
   status = 200
