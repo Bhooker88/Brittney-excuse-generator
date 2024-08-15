@@ -5,7 +5,13 @@
 [context.production.environment]
   NODE_VERSION = "16.20.0"
 
+[build.environment]
+  NODE_OPTIONS = "--openssl-legacy-provider"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+[build.lifecycle]
+  onBuild = "npm install --legacy-peer-deps"
